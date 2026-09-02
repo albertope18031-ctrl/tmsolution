@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" fill="none">
+  <defs>
+    <linearGradient id="aboutBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2D59" />
+      <stop offset="50%" stop-color="#0A1F3D" />
+      <stop offset="100%" stop-color="#061222" />
+    </linearGradient>
+
+    <linearGradient id="accentGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#25D366" />
+      <stop offset="100%" stop-color="#0F2D59" />
+    </linearGradient>
+
+    <linearGradient id="metalPlate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="50%" stop-color="#CBD5E1" />
+      <stop offset="100%" stop-color="#64748B" />
+    </linearGradient>
+
+    <pattern id="isoGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+      <circle cx="0" cy="0" r="1" fill="rgba(255, 255, 255, 0.08)"/>
+    </pattern>
+  </defs>
+
+  <!-- Fondo Tecnológico y Malla de Almacén -->
+  <rect width="800" height="600" rx="16" fill="url(#aboutBg)" />
+  <rect width="800" height="600" rx="16" fill="url(#isoGrid)" />
+
+  <!-- Iluminación de Fondo -->
+  <circle cx="700" cy="100" r="250" fill="#38BDF8" opacity="0.08" filter="blur(40px)" />
+  <circle cx="100" cy="500" r="220" fill="#25D366" opacity="0.06" filter="blur(30px)" />
+
+  <!-- Estructura de Racks Industriales y Logística -->
+  <g transform="translate(60, 80)">
+    <!-- Columnas Estructurales -->
+    <rect x="0" y="0" width="14" height="420" rx="3" fill="#334155" />
+    <rect x="220" y="0" width="14" height="420" rx="3" fill="#334155" />
+    <rect x="440" y="0" width="14" height="420" rx="3" fill="#334155" />
+    <rect x="660" y="0" width="14" height="420" rx="3" fill="#334155" />
+
+    <!-- Travesaños de Nivel -->
+    <rect x="0" y="80" width="674" height="10" fill="#475569" />
+    <rect x="0" y="200" width="674" height="10" fill="#475569" />
+    <rect x="0" y="320" width="674" height="10" fill="#475569" />
+
+    <!-- Cajas y Palets de Suministros (Nivel 1) -->
+    <g transform="translate(20, 95)">
+      <rect x="0" y="10" width="80" height="90" rx="6" fill="#1E293B" stroke="#0F2D59" stroke-width="2"/>
+      <rect x="10" y="25" width="60" height="18" rx="3" fill="#0F2D59"/>
+      <rect x="10" y="50" width="40" height="8" rx="2" fill="#38BDF8" opacity="0.8"/>
+      <rect x="10" y="65" width="30" height="6" rx="2" fill="#64748B"/>
+
+      <rect x="95" y="10" width="90" height="90" rx="6" fill="#1E293B" stroke="#0F2D59" stroke-width="2"/>
+      <circle cx="140" cy="55" r="22" fill="#0F2D59" stroke="#25D366" stroke-width="2"/>
+      <path d="M133 55 L138 60 L148 48" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g transform="translate(245, 95)">
+      <rect x="0" y="20" width="180" height="80" rx="6" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+      <rect x="15" y="35" width="45" height="24" rx="4" fill="#0F2D59" stroke="#F59E0B" stroke-width="1.5"/>
+      <rect x="70" y="35" width="45" height="24" rx="4" fill="#0F2D59" stroke="#F59E0B" stroke-width="1.5"/>
+      <rect x="125" y="35" width="45" height="24" rx="4" fill="#0F2D59" stroke="#F59E0B" stroke-width="1.5"/>
+      <rect x="15" y="70" width="155" height="16" rx="3" fill="#0F2D59" stroke="#38BDF8" stroke-width="1"/>
+    </g>
+
+    <!-- Nivel 2: Cajas de EPP y Refacciones -->
+    <g transform="translate(20, 215)">
+      <rect x="0" y="15" width="185" height="85" rx="6" fill="#1E293B" stroke="#0F2D59" stroke-width="2"/>
+      <rect x="20" y="35" width="70" height="45" rx="4" fill="#0F2D59"/>
+      <rect x="100" y="35" width="70" height="45" rx="4" fill="#0F2D59"/>
+      <text x="55" y="62" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-weight="bold" font-size="11" text-anchor="middle">EPP</text>
+      <text x="135" y="62" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-weight="bold" font-size="11" text-anchor="middle">TOOL</text>
+    </g>
+
+    <g transform="translate(245, 215)">
+      <rect x="0" y="15" width="180" height="85" rx="6" fill="#1E293B" stroke="#0F2D59" stroke-width="2"/>
+      <circle cx="90" cy="58" r="26" fill="#0F2D59" stroke="#38BDF8" stroke-width="2"/>
+      <text x="90" y="62" fill="#38BDF8" font-family="Montserrat, sans-serif" font-weight="bold" font-size="12" text-anchor="middle">TM</text>
+    </g>
+
+    <g transform="translate(465, 215)">
+      <rect x="0" y="15" width="180" height="85" rx="6" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+      <rect x="20" y="35" width="140" height="45" rx="4" fill="#0F2D59" stroke="#25D366" stroke-width="1.5"/>
+      <text x="90" y="62" fill="#25D366" font-family="Inter, sans-serif" font-weight="600" font-size="11" text-anchor="middle">INSPECCIONADO</text>
+    </g>
+  </g>
+
+  <!-- Insignia Central de Distribución Autorizada -->
+  <g transform="translate(480, 430)">
+    <rect width="250" height="90" rx="14" fill="#0F2D59" stroke="#38BDF8" stroke-width="1.5" opacity="0.95"/>
+    <circle cx="45" cy="45" r="24" fill="#25D366" opacity="0.2"/>
+    <circle cx="45" cy="45" r="16" fill="#25D366"/>
+    <path d="M38 45 L43 50 L52 40" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="82" y="40" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-weight="bold" font-size="14">CADENA DE VALOR</text>
+    <text x="82" y="60" fill="#94A3B8" font-family="Inter, sans-serif" font-weight="500" font-size="11">Entregas en tiempo y forma</text>
+  </g>
+</svg>

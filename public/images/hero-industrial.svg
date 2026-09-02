@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Degradados Principales -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F2D59" />
+      <stop offset="60%" stop-color="#0A1F3D" />
+      <stop offset="100%" stop-color="#071426" />
+    </linearGradient>
+
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E2E8F0" />
+      <stop offset="50%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#25D366" />
+      <stop offset="100%" stop-color="#128C7E" />
+    </linearGradient>
+
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <linearGradient id="glowOverlay" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#0F2D59" stop-opacity="0" />
+    </linearGradient>
+
+    <pattern id="industrialGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+      <circle cx="0" cy="0" r="1.5" fill="rgba(255, 255, 255, 0.12)"/>
+    </pattern>
+  </defs>
+
+  <!-- Fondo Industrial y Malla Técnica -->
+  <rect width="800" height="600" rx="16" fill="url(#bgGrad)" />
+  <rect width="800" height="600" rx="16" fill="url(#industrialGrid)" />
+  <circle cx="650" cy="150" r="280" fill="url(#glowOverlay)" />
+
+  <!-- Estructura de Almacén Técnico en Perspectiva -->
+  <g opacity="0.35">
+    <line x1="100" y1="100" x2="700" y2="100" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="4 4" />
+    <line x1="100" y1="200" x2="700" y2="200" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="4 4" />
+    <line x1="100" y1="100" x2="100" y2="500" stroke="#64748B" stroke-width="2" />
+    <line x1="700" y1="100" x2="700" y2="500" stroke="#64748B" stroke-width="2" />
+    <line x1="400" y1="80" x2="400" y2="520" stroke="#64748B" stroke-width="2" />
+  </g>
+
+  <!-- Bastidores y Racks de Suministro Industrial -->
+  <g transform="translate(140, 120)">
+    <!-- Rack 1: Contenedores Técnicos -->
+    <rect x="0" y="40" width="220" height="110" rx="8" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+    <rect x="15" y="55" width="55" height="35" rx="4" fill="#0F2D59" stroke="#38BDF8" stroke-width="1.5"/>
+    <rect x="80" y="55" width="55" height="35" rx="4" fill="#0F2D59" stroke="#38BDF8" stroke-width="1.5"/>
+    <rect x="145" y="55" width="55" height="35" rx="4" fill="#0F2D59" stroke="#38BDF8" stroke-width="1.5"/>
+    <rect x="15" y="100" width="185" height="35" rx="4" fill="#0F2D59" stroke="#38BDF8" stroke-width="1.5"/>
+
+    <!-- Rack 2: Componentes y Repuestos Críticos -->
+    <rect x="250" y="40" width="260" height="110" rx="8" fill="#1E293B" stroke="#334155" stroke-width="2"/>
+    <circle cx="295" cy="95" r="28" fill="#0F2D59" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="295" cy="95" r="14" fill="#1E293B" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="375" cy="95" r="28" fill="#0F2D59" stroke="#25D366" stroke-width="2"/>
+    <circle cx="375" cy="95" r="14" fill="#1E293B" stroke="#25D366" stroke-width="2"/>
+    <circle cx="455" cy="95" r="28" fill="#0F2D59" stroke="#38BDF8" stroke-width="2"/>
+    <circle cx="455" cy="95" r="14" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+  </g>
+
+  <!-- Equipo Central de Primer Plano: EPP y Herramientas de Precisión -->
+  <g transform="translate(180, 270)">
+    <!-- Plataforma Base Metálica -->
+    <polygon points="0,180 440,180 480,240 -40,240" fill="url(#metalGrad)" opacity="0.3"/>
+
+    <!-- Casco de Seguridad Industrial Certificado (EPP) -->
+    <g transform="translate(40, 20)">
+      <path d="M40,100 C40,40 160,40 160,100 L180,115 L20,115 Z" fill="url(#goldGrad)" stroke="#B45309" stroke-width="3"/>
+      <path d="M45,95 C65,60 135,60 155,95" fill="none" stroke="#FDE68A" stroke-width="3" opacity="0.6"/>
+      <rect x="75" y="45" width="50" height="16" rx="4" fill="#0F2D59"/>
+      <text x="100" y="57" fill="#FFFFFF" font-family="Montserrat, sans-serif" font-weight="bold" font-size="10" text-anchor="middle">TM</text>
+    </g>
+
+    <!-- Calibrador Vernier / Herramienta de Precisión Metálica -->
+    <g transform="translate(190, 80) rotate(-15)">
+      <rect x="0" y="20" width="220" height="16" rx="2" fill="url(#metalGrad)" stroke="#334155" stroke-width="1.5"/>
+      <rect x="0" y="0" width="30" height="55" rx="3" fill="#E2E8F0" stroke="#475569" stroke-width="2"/>
+      <rect x="90" y="8" width="40" height="40" rx="3" fill="#0F2D59" stroke="#38BDF8" stroke-width="1.5"/>
+      <!-- Graduaciones Milimétricas -->
+      <line x1="40" y1="20" x2="40" y2="28" stroke="#0F2D59" stroke-width="1.5"/>
+      <line x1="50" y1="20" x2="50" y2="25" stroke="#0F2D59" stroke-width="1"/>
+      <line x1="60" y1="20" x2="60" y2="28" stroke="#0F2D59" stroke-width="1.5"/>
+      <line x1="70" y1="20" x2="70" y2="25" stroke="#0F2D59" stroke-width="1"/>
+      <line x1="80" y1="20" x2="80" y2="28" stroke="#0F2D59" stroke-width="1.5"/>
+    </g>
+
+    <!-- Rodamiento Industrial de Alta Resistencia -->
+    <g transform="translate(320, 40)">
+      <circle cx="60" cy="60" r="50" fill="url(#metalGrad)" stroke="#1E293B" stroke-width="3"/>
+      <circle cx="60" cy="60" r="32" fill="#0F2D59" stroke="#38BDF8" stroke-width="2"/>
+      <circle cx="60" cy="60" r="18" fill="#1E293B"/>
+      <!-- Esferas de Rodamiento -->
+      <circle cx="60" cy="18" r="6" fill="#F8FAFC" stroke="#94A3B8"/>
+      <circle cx="90" cy="35" r="6" fill="#F8FAFC" stroke="#94A3B8"/>
+      <circle cx="98" cy="68" r="6" fill="#F8FAFC" stroke="#94A3B8"/>
+      <circle cx="80" cy="95" r="6" fill="#F8FAFC" stroke="#94A3B8"/>
+      <circle cx="45" cy="100" r="6" fill="#F8FAFC" stroke="#94A3B8"/>
+      <circle cx="22" cy="75" r="6" fill="#F8FAFC" stroke="#94A3B8"/>
+      <circle cx="25" cy="40" r="6" fill="#F8FAFC" stroke="#94A3B8"/>
+    </g>
+  </g>
+
+  <!-- Insignia de Calidad y Certificación -->
+  <g transform="translate(620, 60)">
+    <rect width="130" height="42" rx="21" fill="rgba(15, 45, 89, 0.85)" stroke="#38BDF8" stroke-width="1.5"/>
+    <circle cx="22" cy="21" r="9" fill="#25D366" />
+    <path d="M18 21 L21 24 L26 18" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="40" y="25" fill="#FFFFFF" font-family="Inter, sans-serif" font-weight="600" font-size="12">CERTIFICADO</text>
+  </g>
+</svg>
