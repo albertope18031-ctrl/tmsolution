@@ -22,7 +22,7 @@ export const SuppliesHeader: React.FC<SuppliesHeaderProps> = ({
     const el = textRef.current;
     if (!el) return;
 
-    // Viewport trigger anticipado con IntersectionObserver (threshold: 0.05 / once: true)
+    // Viewport trigger calibrado (threshold: 0.35 / rootMargin: -150px / once: true)
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -31,8 +31,8 @@ export const SuppliesHeader: React.FC<SuppliesHeaderProps> = ({
         }
       },
       {
-        threshold: 0.05,
-        rootMargin: "0px 0px 50px 0px",
+        threshold: 0.35,
+        rootMargin: "0px 0px -150px 0px",
       }
     );
 
