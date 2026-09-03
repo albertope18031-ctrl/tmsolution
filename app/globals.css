@@ -94,3 +94,20 @@ body {
   animation: fadeInDownSlow 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: opacity, transform;
 }
+
+/* Animación de entrada de izquierda a derecha Fade In Right (2s) para el encabezado de Catálogo */
+@keyframes fadeInLeftToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-right-slow {
+  animation: fadeInLeftToRight 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}

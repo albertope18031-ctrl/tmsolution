@@ -53,10 +53,15 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateY(-25px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        fadeInLeftToRight: {
+          "0%": { opacity: "0", transform: "translateX(-35px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
       },
       animation: {
         "fade-in-down": "fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "fade-in-down-slow": "fadeInDownSlow 2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in-right-slow": "fadeInLeftToRight 2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
       },
     },
   },

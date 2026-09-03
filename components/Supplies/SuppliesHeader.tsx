@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useRef, useState, useEffect } from "react";
 
 interface SuppliesHeaderProps {
   onPrev?: () => void;
@@ -13,10 +15,42 @@ export const SuppliesHeader: React.FC<SuppliesHeaderProps> = ({
   canScrollLeft = false,
   canScrollRight = true,
 }) => {
+  const textRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const el = textRef.current;
+    if (!el) return;
+
+    // Viewport trigger con IntersectionObserver (amount: 0.2 / once: true)
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-12">
-      {/* Bloque Izquierdo: Textos */}
-      <div className="max-w-2xl text-left">
+      {/* Bloque Izquierdo: Textos con Animación Fade In Right (2s) disparada al hacer Scroll */}
+      <div
+        ref={textRef}
+        className={`max-w-2xl text-left ${
+          isInView
+            ? "animate-fade-in-right-slow"
+            : "opacity-0 -translate-x-[35px]"
+        }`}
+      >
         {/* Kicker Superior */}
         <span className="inline-block text-[12px] sm:text-[13px] font-bold text-[#0F2D59] uppercase tracking-wider mb-2 select-none">
           CATÁLOGO Y LÍNEAS DE SUMINISTRO
