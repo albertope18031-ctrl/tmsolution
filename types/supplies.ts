@@ -1,6 +1,15 @@
 import React from "react";
 
-export type SupplyCategorySlug = "herramientas" | "epp" | "operativo" | "especial";
+export type SupplyCategorySlug =
+  | "automatizacion"
+  | "control"
+  | "medicion"
+  | "rodamientos"
+  | "electrico"
+  | "operativo"
+  | "especial"
+  | "herramientas"
+  | "epp";
 
 export interface SupplyCategory {
   id: string;

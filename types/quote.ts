@@ -3,7 +3,18 @@ export interface QuoteFormData {
   company: string;
   phone: string;
   email: string;
-  category: "herramientas" | "epp" | "operativo" | "especial" | "general" | "";
+  category:
+    | "automatizacion"
+    | "control"
+    | "medicion"
+    | "rodamientos"
+    | "electrico"
+    | "operativo"
+    | "especial"
+    | "general"
+    | "herramientas"
+    | "epp"
+    | "";
   details: string;
 }
 

@@ -37,7 +37,18 @@ export const QuoteForm: React.FC = () => {
       }
 
       if (cat) {
-        const validCategories = ["herramientas", "epp", "operativo", "especial", "general"];
+        const validCategories = [
+          "automatizacion",
+          "control",
+          "medicion",
+          "rodamientos",
+          "electrico",
+          "operativo",
+          "especial",
+          "general",
+          "herramientas",
+          "epp",
+        ];
         if (validCategories.includes(cat)) {
           setFormData((prev) => ({ ...prev, category: cat as QuoteFormData["category"] }));
         }
@@ -244,9 +255,12 @@ export const QuoteForm: React.FC = () => {
             <option value="" disabled>
               Selecciona una categoría...
             </option>
-            <option value="herramientas">Herramienta Especializada</option>
-            <option value="epp">Seguridad Industrial (EPP)</option>
-            <option value="operativo">Material Operativo y de Soporte</option>
+            <option value="automatizacion">Automatización</option>
+            <option value="control">Control Industrial</option>
+            <option value="medicion">Medición y Energía</option>
+            <option value="rodamientos">Rodamientos Industriales</option>
+            <option value="electrico">Material Eléctrico</option>
+            <option value="operativo">Material Operativo y Soporte</option>
             <option value="especial">Adquisición a la Medida / Pieza Especial</option>
             <option value="general">Múltiples Categorías / Abastecimiento General</option>
           </select>
