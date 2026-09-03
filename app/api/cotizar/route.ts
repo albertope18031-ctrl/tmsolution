@@ -4,14 +4,11 @@ import { supabase } from "@/lib/supabaseClient";
 // ============================================================================
 // CONFIGURACIÓN DE DESTINATARIOS
 // ============================================================================
-// Correo institucional oficial de ventas (producción):
-// const OFFICIAL_RECIPIENT = "ventas@tmsolution.com.mx";
+// Correo oficial corporativo para recepción de cotizaciones (producción):
+const OFFICIAL_RECIPIENT = "cmendoza@tmsolution.com.mx";
 
-// Correo de prueba personal del administrador:
-const TEST_RECIPIENT = "albertope18031@gmail.com";
-
-// Destinatario activo (usa variable de entorno si existe, o el de prueba por defecto):
-const TARGET_EMAIL = process.env.QUOTE_RECIPIENT_EMAIL || TEST_RECIPIENT;
+// Destinatario activo (usa variable de entorno si existe, o el oficial por defecto):
+const TARGET_EMAIL = process.env.QUOTE_RECIPIENT_EMAIL || OFFICIAL_RECIPIENT;
 
 function sanitize(input: string): string {
   if (!input) return "";
@@ -65,15 +62,12 @@ function generateEmailHtml(data: {
       </td>
     </tr>
 
-    <!-- Alerta de Modo Prueba -->
+    <!-- Franja de Notificación Oficial -->
     <tr>
-      <td style="background-color: #FEF3C7; border-bottom: 1px solid #FDE68A; padding: 12px 32px;">
-        <span style="display: inline-block; font-size: 12px; font-weight: 700; color: #92400E; text-transform: uppercase; letter-spacing: 0.5px;">
-          ⚠️ [MODO DE PRUEBA ACTIVADO]
+      <td style="background-color: #EBF1F8; border-bottom: 1px solid #D1E0F0; padding: 12px 32px;">
+        <span style="display: inline-block; font-size: 12px; font-weight: 700; color: #0F2D59; text-transform: uppercase; letter-spacing: 0.5px;">
+          🔔 Solicitud de Cotización Empresarial (Portal Web)
         </span>
-        <p style="margin: 4px 0 0 0; font-size: 12px; color: #78350F;">
-          Este correo fue dirigido exclusivamente a la cuenta de prueba: <strong>${TARGET_EMAIL}</strong>
-        </p>
       </td>
     </tr>
 
@@ -287,7 +281,7 @@ export async function POST(request: Request) {
             from: fromEmail,
             to: [TARGET_EMAIL],
             reply_to: email,
-            subject: "[PRUEBA DE COTIZACIÓN] Solicitud Web - TM SOLUTION",
+            subject: "[NUEVA COTIZACIÓN] Solicitud Web - TM SOLUTION",
             html: emailHtml,
           }),
         });
@@ -308,7 +302,7 @@ export async function POST(request: Request) {
       }
     } else {
       console.info(
-        `[MODO PRUEBA / LOCAL] RESEND_API_KEY no detectada en .env.local. Correo simulado para: ${TARGET_EMAIL}`
+        `[SISTEMA COTIZACIONES] RESEND_API_KEY no detectada en .env.local. Correo simulado para: ${TARGET_EMAIL}`
       );
     }
 
