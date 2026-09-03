@@ -22,7 +22,8 @@ export const SuppliesHeader: React.FC<SuppliesHeaderProps> = ({
     const el = textRef.current;
     if (!el) return;
 
-    // Viewport trigger calibrado (threshold: 0.35 / rootMargin: -150px / once: true)
+    // Viewport trigger calibrado para móvil y desktop (móvil: threshold 0.1, margin -20px)
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -31,8 +32,8 @@ export const SuppliesHeader: React.FC<SuppliesHeaderProps> = ({
         }
       },
       {
-        threshold: 0.35,
-        rootMargin: "0px 0px -150px 0px",
+        threshold: isMobile ? 0.1 : 0.2,
+        rootMargin: isMobile ? "0px 0px -20px 0px" : "0px 0px -50px 0px",
       }
     );
 

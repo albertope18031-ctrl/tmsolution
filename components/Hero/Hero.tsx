@@ -8,7 +8,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="inicio"
-      className="relative w-full bg-gradient-to-b from-white via-[#F4F6F9]/60 to-[#F4F6F9] pt-20 lg:pt-24 pb-8 lg:pb-10 flex items-center min-h-auto overflow-hidden border-b border-[#E5E7EB]"
+      className="relative w-full bg-gradient-to-b from-white via-[#F4F6F9]/60 to-[#F4F6F9] pt-20 lg:pt-24 pb-5 sm:pb-6 lg:pb-10 flex items-center min-h-auto overflow-hidden border-b border-[#E5E7EB]"
     >
       {/* Elementos Gráficos de Fondo Sutiles */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#0F2D59]/5 rounded-full blur-3xl pointer-events-none -mr-20 -mt-20" />
