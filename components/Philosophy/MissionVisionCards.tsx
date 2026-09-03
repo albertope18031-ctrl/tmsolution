@@ -4,10 +4,10 @@ export const MissionVisionCards: React.FC = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
       {/* Tarjeta 1: Nuestra Misión */}
-      <div className="bg-[#F4F6F9] border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 lg:p-9 flex flex-col justify-start transition-all duration-300 hover:border-[#0F2D59]/30 hover:shadow-[0_12px_24px_rgba(15,45,89,0.06)]">
+      <div className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 lg:p-9 flex flex-col justify-start transition-all duration-300 hover:border-[#0F2D59]/30 hover:shadow-[0_12px_24px_rgba(15,45,89,0.06)] shadow-sm">
         {/* Cabecera de Tarjeta con Icono 48x48px */}
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl bg-white border border-[#E2E8F0] flex items-center justify-center text-[#0F2D59] shadow-sm">
+          <div className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl bg-[#EBF1F8] border border-[#E2E8F0] flex items-center justify-center text-[#0F2D59] shadow-sm">
             {/* Icono de Diana / Objetivo / Propósito */}
             <svg
               className="w-6 h-6 text-[#0F2D59]"
@@ -37,10 +37,10 @@ export const MissionVisionCards: React.FC = () => {
       </div>
 
       {/* Tarjeta 2: Nuestra Visión */}
-      <div className="bg-[#F4F6F9] border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 lg:p-9 flex flex-col justify-start transition-all duration-300 hover:border-[#0F2D59]/30 hover:shadow-[0_12px_24px_rgba(15,45,89,0.06)]">
+      <div className="bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 lg:p-9 flex flex-col justify-start transition-all duration-300 hover:border-[#0F2D59]/30 hover:shadow-[0_12px_24px_rgba(15,45,89,0.06)] shadow-sm">
         {/* Cabecera de Tarjeta con Icono 48x48px */}
         <div className="flex items-center gap-4 mb-4">
-          <div className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl bg-white border border-[#E2E8F0] flex items-center justify-center text-[#0F2D59] shadow-sm">
+          <div className="w-12 h-12 min-w-[48px] min-h-[48px] rounded-xl bg-[#EBF1F8] border border-[#E2E8F0] flex items-center justify-center text-[#0F2D59] shadow-sm">
             {/* Icono de Brújula / Expansión y Futuro */}
             <svg
               className="w-6 h-6 text-[#0F2D59]"

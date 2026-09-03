@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#1F242E] text-white border-t-[3px] border-[#0F2D59] pt-12 sm:pt-16 pb-8">
+    <footer id="contacto" className="w-full bg-[#1F242E] text-white border-t-[3px] border-[#0F2D59] pt-12 sm:pt-16 pb-8 scroll-mt-[90px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Retícula de 3 Columnas en Desktop y 1 Columna en Móvil */}

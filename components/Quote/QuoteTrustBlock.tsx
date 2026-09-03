@@ -9,18 +9,14 @@ export const QuoteTrustBlock: React.FC = () => {
   return (
     <div className="w-full flex flex-col items-center text-center">
       {/* Encabezado Centrado de Ancho Completo */}
-      <div className="max-w-3xl mx-auto mb-10">
+      <div className="max-w-3xl mx-auto mb-8 sm:mb-10">
         <span className="inline-block text-[12px] sm:text-[13px] font-bold text-[#0F2D59] uppercase tracking-wider mb-2 select-none">
-          ATENCIÓN Y ASESORÍA TÉCNICA
+          VENTAJAS COMPETITIVAS
         </span>
 
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F242E] font-montserrat leading-tight tracking-tight mb-4">
-          Cotizaciones Claras y Entregas Puntuales
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#1F242E] font-montserrat leading-tight tracking-tight">
+          ¿Por qué con TM SOLUTION?
         </h2>
-
-        <p className="text-[14px] sm:text-[16px] text-[#5A6578] leading-relaxed">
-          Nuestro departamento de compras y ventas técnicas analizará tus requerimientos de refacciones, equipos o consumibles para entregarte una propuesta a la medida en tiempo récord.
-        </p>
       </div>
 
       {/* Cuadrícula de 3 Garantías de Servicio: 3 Columnas en Desktop y Apiladas en Móvil */}

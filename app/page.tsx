@@ -14,31 +14,31 @@ export default function Home() {
       {/* Módulo 1: Cabecera Fija Responsiva */}
       <Header />
 
-      {/* Contenido Principal con Todos los Módulos Integrados */}
+      {/* Contenido Principal con Todos los Módulos Reordenados */}
       <main className="flex-1">
-        {/* Módulo 2: Hero Section (Above the Fold) con id="inicio" */}
+        {/* 2. Portada (Hero Section) con id="inicio" */}
         <Hero />
 
-        {/* Módulo 3: Matriz de Suministros y Alcance (Feature Cards) con id="suministros" */}
+        {/* 3. Catálogo y Líneas de Suministro (Carrusel/Slider) con id="suministros" */}
         <SuppliesSection />
 
-        {/* Módulo 4A: Bloque Institucional («¿Quiénes somos?») con id="nosotros" */}
+        {/* 4. ¿Quiénes Somos? (Trayectoria y Respaldo) con id="nosotros" */}
         <AboutSection />
 
-        {/* Módulo 4B: Muro de Marcas (Brand Trust Grid) con id="marcas" */}
+        {/* 5. Ecosistema de Proveedores (Marcas Aliadas) con id="marcas" */}
         <BrandsSection />
 
-        {/* Módulo 5A: Filosofía Corporativa («Lo que nos distingue») con id="mision-vision" */}
-        <PhilosophySection />
+        {/* 6. Bloque: «¿Por qué con TM SOLUTION?» con id="por-que-tm" */}
+        <QuoteSection />
 
-        {/* Módulo 5B: Franja Intermedia de Conversión (Lead Capture Banner) */}
+        {/* 7. Franja de Conversión («¡PONTE EN CONTACTO CON NOSOTROS!» con botón "Contáctanos") */}
         <MidPageBanner />
 
-        {/* Módulo 6A: Formulario de Cotización Parametrizado con id="cotizar" */}
-        <QuoteSection />
+        {/* 8. Bloque: «Misión y Visión» con id="mision-vision" */}
+        <PhilosophySection />
       </main>
 
-      {/* Módulo 6C: Pie de Página Institucional */}
+      {/* 9. Pie de Página Institucional (Footer) */}
       <Footer />
     </div>
   );
