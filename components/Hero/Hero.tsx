@@ -23,8 +23,8 @@ export const Hero: React.FC = () => {
             {/* Nivel 1: Badge de Confianza */}
             <HeroBadge />
 
-            {/* Nivel 2: Titular Principal H1 Semántico */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px] font-extrabold font-montserrat text-[#0F2D59] leading-[1.16] tracking-tight mb-4">
+            {/* Nivel 2: Titular Principal H1 Semántico con Animación Fade In Down */}
+            <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px] font-extrabold font-montserrat text-[#0F2D59] leading-[1.16] tracking-tight mb-4 animate-fade-in-down">
               SUMINISTROS Y SOLUCIONES DE CALIDAD PARA TU EMPRESA
             </h1>
 
