@@ -143,7 +143,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
             id="modal-title"
             className="text-xl sm:text-2xl font-bold font-montserrat text-[#0F2D59] leading-tight"
           >
-            Solicitud de Cotización Empresarial
+            Solicitud de Cotización
           </h3>
           <p className="text-xs sm:text-sm text-[#5A6578] mt-1.5">
             Completa tus datos y nuestro equipo técnico te responderá a la brevedad.
@@ -268,7 +268,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({ isOpen, onClose }) => {
                   <span>Procesando Solicitud...</span>
                 </>
               ) : (
-                <span>Enviar Solicitud de Cotización</span>
+                <span>Enviar</span>
               )}
             </button>
           </div>

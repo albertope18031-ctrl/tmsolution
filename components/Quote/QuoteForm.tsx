@@ -115,7 +115,7 @@ export const QuoteForm: React.FC = () => {
   return (
     <div className="bg-white border border-[#E2E8F0] rounded-2xl shadow-[0_12px_32px_rgba(15,45,89,0.08)] p-6 sm:p-9 text-left">
       <h3 className="text-xl sm:text-2xl font-bold font-montserrat text-[#0F2D59] mb-2">
-        Solicitud de Cotización Empresarial
+        Solicitud de Cotización
       </h3>
       <p className="text-xs sm:text-sm text-[#5A6578] mb-6">
         Los campos marcados con asterisco (<span className="text-red-500 font-bold">*</span>) son obligatorios para cotizar.
@@ -239,7 +239,7 @@ export const QuoteForm: React.FC = () => {
                 <span>Procesando Solicitud...</span>
               </>
             ) : (
-              <span>Enviar Solicitud de Cotización</span>
+              <span>Enviar</span>
             )}
           </button>
         </div>

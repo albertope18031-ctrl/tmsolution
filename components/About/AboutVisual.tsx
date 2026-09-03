@@ -39,10 +39,10 @@ export const AboutVisual: React.FC = () => {
         </div>
         <div className="flex flex-col text-left">
           <span className="text-[13px] sm:text-[14px] font-bold text-[#0F2D59] leading-tight font-montserrat">
-            +9 Años de Trayectoria
+            100% Cobertura
           </span>
-          <span className="text-[10.5px] sm:text-[11px] font-medium text-[#5A6578] mt-0.5">
-            Garantía y respaldo empresarial
+          <span className="text-[10.5px] sm:text-[11.5px] font-medium text-[#5A6578] mt-0.5 leading-snug">
+            Entregas en planta, taller y corporativo a tiempo
           </span>
         </div>
       </div>
