@@ -63,12 +63,12 @@ export const Hero: React.FC = () => {
             {/* Contenedor con Aspect Ratio fijo (16/10 o 4/3) para CLS = 0 */}
             <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_20px_40px_rgba(15,45,89,0.12)] border border-[#E2E8F0] bg-[#0A1F3D]">
               <Image
-                src="/images/hero-industrial.svg"
-                alt="Suministros Industriales, herramientas y refacciones de alta precisión TM SOLUTION"
+                src="/hero.png"
+                alt="Suministros Industriales y Soluciones Empresariales - TM SOLUTION"
                 fill
                 priority={true}
                 sizes="(max-width: 1024px) 100vw, 42vw"
-                className="object-cover object-center transform hover:scale-105 transition-transform duration-700 ease-out"
+                className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 ease-out"
               />
 
               {/* Degradado Sutil de Contraste */}
