@@ -2,6 +2,7 @@
 
 import React, { useEffect } from "react";
 import { NAV_ITEMS } from "./DesktopNav";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 
 interface MobileNavProps {
   isOpen: boolean;
@@ -14,6 +15,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
   onToggle,
   onClose,
 }) => {
+  const { openModal } = useQuoteModal();
   // Cerrar menú con tecla Escape para accesibilidad
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -100,13 +102,17 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           <div className="h-px bg-[#E5E7EB] my-2" />
 
           {/* Botón CTA a ancho completo en móvil */}
-          <a
-            href="#cotizar"
-            onClick={handleLinkClick}
-            className="w-full h-[46px] min-h-[46px] bg-[#0F2D59] hover:bg-[#0A1F3D] active:bg-[#08172E] text-white font-semibold text-[15px] rounded-[8px] flex items-center justify-center shadow-[0_4px_10px_rgba(15,45,89,0.15)] transition-all duration-200"
+          <button
+            type="button"
+            onClick={() => {
+              onClose();
+              openModal();
+            }}
+            data-open-modal="quote"
+            className="w-full h-[46px] min-h-[46px] bg-[#0F2D59] hover:bg-[#0A1F3D] active:bg-[#08172E] text-white font-semibold text-[15px] rounded-[8px] flex items-center justify-center shadow-[0_4px_10px_rgba(15,45,89,0.15)] transition-all duration-200 cursor-pointer"
           >
             Cotiza sin compromiso
-          </a>
+          </button>
         </div>
       </div>
     </div>

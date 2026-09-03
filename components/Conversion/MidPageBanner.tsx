@@ -1,6 +1,11 @@
+"use client";
+
 import React from "react";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 
 export const MidPageBanner: React.FC = () => {
+  const { openModal } = useQuoteModal();
+
   return (
     <section className="relative w-full bg-[#0F2D59] py-14 sm:py-18 lg:py-20 overflow-hidden text-white border-y border-[#0A1F3D]">
       {/* Textura Gráfica de Malla Técnica en Bajísima Opacidad */}
@@ -34,14 +39,15 @@ export const MidPageBanner: React.FC = () => {
 
           {/* Bloque Derecho: Botones de Conversión Rápida */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 w-full lg:w-auto">
-            {/* Botón Primario: Ir al formulario de cotización */}
-            <a
-              href="#cotizar"
+            {/* Botón Primario: Contáctanos (Abre Modal de Cotización) */}
+            <button
+              type="button"
+              onClick={openModal}
               data-track="cta-mid-banner-quote"
-              className="min-h-[48px] inline-flex items-center justify-center bg-white hover:bg-[#F4F6F9] active:bg-[#E5E7EB] text-[#0F2D59] font-semibold text-[15px] px-6 py-3.5 rounded-[8px] shadow-[0_6px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.28)] transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white text-center"
+              className="min-h-[48px] inline-flex items-center justify-center bg-white hover:bg-[#F4F6F9] active:bg-[#E5E7EB] text-[#0F2D59] font-semibold text-[15px] px-6 py-3.5 rounded-[8px] shadow-[0_6px_20px_rgba(0,0,0,0.2)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.28)] transform hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white text-center cursor-pointer"
             >
-              Ir al formulario de cotización
-            </a>
+              Contáctanos
+            </button>
 
             {/* Botón Secundario: Cotizar por WhatsApp */}
             <a

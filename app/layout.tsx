@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { WhatsAppWidget } from "@/components/Floating/WhatsAppWidget";
+import { QuoteModalProvider } from "@/context/QuoteModalContext";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -32,9 +33,11 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-[#F4F6F9] text-[#1F242E] font-sans selection:bg-[#0F2D59] selection:text-white antialiased relative">
-        {children}
-        {/* Capa Asíncrona Flotante de WhatsApp */}
-        <WhatsAppWidget />
+        <QuoteModalProvider>
+          {children}
+          {/* Capa Asíncrona Flotante de WhatsApp */}
+          <WhatsAppWidget />
+        </QuoteModalProvider>
       </body>
     </html>
   );
