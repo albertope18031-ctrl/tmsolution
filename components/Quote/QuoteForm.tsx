@@ -6,13 +6,12 @@ import { QuoteFormData } from "@/types/quote";
 export const QuoteForm: React.FC = () => {
   const [formData, setFormData] = useState<QuoteFormData>({
     fullName: "",
-    company: "",
     phone: "",
     email: "",
-    category: "",
     details: "",
   });
 
+  const [optionalCategory, setOptionalCategory] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
   const [statusMessage, setStatusMessage] = useState<{
     type: "success" | "error" | null;
@@ -20,7 +19,7 @@ export const QuoteForm: React.FC = () => {
     referenceId?: string;
   }>({ type: null, text: "" });
 
-  // 1. Parametrización dinámica desde la URL / Hash (?cat=epp, ?cat=herramientas, etc.)
+  // Captura opcional de categoría desde URL/hash para adjuntar al requerimiento
   useEffect(() => {
     const parseCategoryFromUrl = () => {
       if (typeof window === "undefined") return;
@@ -28,7 +27,6 @@ export const QuoteForm: React.FC = () => {
       const urlParams = new URLSearchParams(window.location.search);
       let cat = urlParams.get("cat");
 
-      // También revisar si viene en el hash (ej. #cotizar?cat=epp)
       if (!cat && window.location.hash.includes("?cat=")) {
         const hashQuery = window.location.hash.split("?cat=")[1];
         if (hashQuery) {
@@ -37,21 +35,7 @@ export const QuoteForm: React.FC = () => {
       }
 
       if (cat) {
-        const validCategories = [
-          "automatizacion",
-          "control",
-          "medicion",
-          "rodamientos",
-          "electrico",
-          "operativo",
-          "especial",
-          "general",
-          "herramientas",
-          "epp",
-        ];
-        if (validCategories.includes(cat)) {
-          setFormData((prev) => ({ ...prev, category: cat as QuoteFormData["category"] }));
-        }
+        setOptionalCategory(cat);
       }
     };
 
@@ -61,7 +45,7 @@ export const QuoteForm: React.FC = () => {
   }, []);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -76,7 +60,7 @@ export const QuoteForm: React.FC = () => {
     if (!/^[0-9]{10}$/.test(cleanPhone)) {
       setStatusMessage({
         type: "error",
-        text: "Por favor ingresa un número telefónico de 10 dígitos numéricos (ej. 6621059595).",
+        text: "Por favor ingresa un número telefónico de 10 dígitos numéricos (ej. 6621124124).",
       });
       return;
     }
@@ -87,7 +71,13 @@ export const QuoteForm: React.FC = () => {
       const response = await fetch("/api/cotizar", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, phone: cleanPhone }),
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          phone: cleanPhone,
+          email: formData.email,
+          details: formData.details,
+          category: optionalCategory || undefined,
+        }),
       });
 
       const result = await response.json();
@@ -101,10 +91,8 @@ export const QuoteForm: React.FC = () => {
         // Reset form
         setFormData({
           fullName: "",
-          company: "",
           phone: "",
           email: "",
-          category: "",
           details: "",
         });
       } else {
@@ -167,42 +155,24 @@ export const QuoteForm: React.FC = () => {
 
       {/* Formulario */}
       <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
-        {/* Fila 1: Nombre y Empresa */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label htmlFor="fullName" className="block text-xs sm:text-sm font-semibold text-[#1F242E] mb-1.5">
-              Nombre completo <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="fullName"
-              name="fullName"
-              required
-              value={formData.fullName}
-              onChange={handleChange}
-              placeholder="Ej. Ing. Carlos Mendoza"
-              className="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-[#1F242E] placeholder-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F2D59] focus:border-transparent transition-all"
-            />
-          </div>
-
-          <div>
-            <label htmlFor="company" className="block text-xs sm:text-sm font-semibold text-[#1F242E] mb-1.5">
-              Empresa o Razón Social <span className="text-red-500">*</span>
-            </label>
-            <input
-              type="text"
-              id="company"
-              name="company"
-              required
-              value={formData.company}
-              onChange={handleChange}
-              placeholder="Ej. Minera del Norte S.A. de C.V."
-              className="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-[#1F242E] placeholder-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F2D59] focus:border-transparent transition-all"
-            />
-          </div>
+        {/* Fila 1: Nombre completo (ancho completo) */}
+        <div>
+          <label htmlFor="fullName" className="block text-xs sm:text-sm font-semibold text-[#1F242E] mb-1.5">
+            Nombre completo <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            required
+            value={formData.fullName}
+            onChange={handleChange}
+            placeholder="Ej. Ing. Carlos Mendoza"
+            className="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-[#1F242E] placeholder-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F2D59] focus:border-transparent transition-all"
+          />
         </div>
 
-        {/* Fila 2: Teléfono y Correo */}
+        {/* Fila 2: Teléfono / WhatsApp y Correo electrónico (2 cols en PC / 1 col en móvil) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <label htmlFor="phone" className="block text-xs sm:text-sm font-semibold text-[#1F242E] mb-1.5">
@@ -217,14 +187,14 @@ export const QuoteForm: React.FC = () => {
               maxLength={10}
               value={formData.phone}
               onChange={handleChange}
-              placeholder="Ej. 6621059595"
+              placeholder="Ej. 6621124124"
               className="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-[#1F242E] placeholder-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F2D59] focus:border-transparent transition-all"
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-xs sm:text-sm font-semibold text-[#1F242E] mb-1.5">
-              Correo electrónico corporativo <span className="text-red-500">*</span>
+              Correo electrónico <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
@@ -239,34 +209,7 @@ export const QuoteForm: React.FC = () => {
           </div>
         </div>
 
-        {/* Fila 3: Categoría de Suministro */}
-        <div>
-          <label htmlFor="category" className="block text-xs sm:text-sm font-semibold text-[#1F242E] mb-1.5">
-            Categoría de Suministro Requerida <span className="text-red-500">*</span>
-          </label>
-          <select
-            id="category"
-            name="category"
-            required
-            value={formData.category}
-            onChange={handleChange}
-            className="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-[#1F242E] bg-white focus:outline-none focus:ring-2 focus:ring-[#0F2D59] focus:border-transparent transition-all"
-          >
-            <option value="" disabled>
-              Selecciona una categoría...
-            </option>
-            <option value="automatizacion">Automatización</option>
-            <option value="control">Control Industrial</option>
-            <option value="medicion">Medición y Energía</option>
-            <option value="rodamientos">Rodamientos Industriales</option>
-            <option value="electrico">Material Eléctrico</option>
-            <option value="operativo">Material Operativo y Soporte</option>
-            <option value="especial">Adquisición a la Medida / Pieza Especial</option>
-            <option value="general">Múltiples Categorías / Abastecimiento General</option>
-          </select>
-        </div>
-
-        {/* Fila 4: Detalle de la Solicitud */}
+        {/* Fila 3: Detalle de la solicitud o número de parte (ancho completo) */}
         <div>
           <label htmlFor="details" className="block text-xs sm:text-sm font-semibold text-[#1F242E] mb-1.5">
             Detalle de la solicitud o número de parte <span className="text-red-500">*</span>

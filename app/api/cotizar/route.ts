@@ -26,24 +26,17 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     const fullName = sanitize(body.fullName);
-    const company = sanitize(body.company);
+    const company = sanitize(body.company) || "Empresa no especificada";
     const rawPhone = sanitize(body.phone);
     const phone = rawPhone.replace(/[\s\-\(\)]/g, "");
     const email = sanitize(body.email);
-    const category = sanitize(body.category);
+    const category = sanitize(body.category) || "general";
     const details = sanitize(body.details);
 
-    // 1. Validaciones del lado del servidor
+    // 1. Validaciones del lado del servidor (4 campos obligatorios)
     if (!fullName || fullName.length < 2) {
       return NextResponse.json(
         { success: false, message: "Por favor proporciona un nombre válido." },
-        { status: 400 }
-      );
-    }
-
-    if (!company || company.length < 2) {
-      return NextResponse.json(
-        { success: false, message: "Por favor proporciona la empresa o razón social." },
         { status: 400 }
       );
     }
@@ -57,14 +50,7 @@ export async function POST(request: Request) {
 
     if (!email || !isValidEmail(email)) {
       return NextResponse.json(
-        { success: false, message: "Por favor proporciona un correo electrónico corporativo válido." },
-        { status: 400 }
-      );
-    }
-
-    if (!category || !VALID_CATEGORIES.includes(category)) {
-      return NextResponse.json(
-        { success: false, message: "Por favor selecciona una categoría de suministro válida." },
+        { success: false, message: "Por favor proporciona un correo electrónico válido." },
         { status: 400 }
       );
     }

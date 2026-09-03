@@ -1,21 +1,10 @@
 export interface QuoteFormData {
   fullName: string;
-  company: string;
   phone: string;
   email: string;
-  category:
-    | "automatizacion"
-    | "control"
-    | "medicion"
-    | "rodamientos"
-    | "electrico"
-    | "operativo"
-    | "especial"
-    | "general"
-    | "herramientas"
-    | "epp"
-    | "";
   details: string;
+  company?: string;
+  category?: string;
 }
 
 export interface QuoteSubmissionResponse {
