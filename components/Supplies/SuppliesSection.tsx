@@ -47,7 +47,7 @@ export const SuppliesSection: React.FC = () => {
   return (
     <section
       id="suministros"
-      className="relative w-full bg-[#F4F6F9] pt-5 sm:pt-6 lg:pt-12 pb-12 sm:pb-16 lg:pb-20 scroll-mt-[90px] border-b border-[#E5E7EB] transition-colors overflow-hidden"
+      className="relative w-full bg-[#F4F6F9] pt-5 sm:pt-6 lg:pt-12 pb-6 sm:pb-8 lg:pb-10 mb-0 scroll-mt-[90px] border-b border-[#E5E7EB] transition-colors overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Encabezado de Sección con Controles Circulares de Navegación */}
