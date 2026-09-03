@@ -45,7 +45,7 @@ export const MidPageBanner: React.FC = () => {
 
             {/* Botón Secundario: Cotizar por WhatsApp */}
             <a
-              href="https://wa.me/526621059595?text=Hola,%20deseo%20cotizar%20suministros%20para%20mi%20empresa"
+              href="https://wa.me/526621124124?text=Hola,%20deseo%20cotizar%20suministros%20para%20mi%20empresa"
               target="_blank"
               rel="noopener noreferrer"
               data-track="cta-mid-banner-whatsapp"

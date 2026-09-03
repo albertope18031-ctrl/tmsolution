@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export const Footer: React.FC = () => {
   return (
@@ -10,21 +11,15 @@ export const Footer: React.FC = () => {
           
           {/* Columna 1: Identidad Corporativa y Alcance */}
           <div className="space-y-4">
-            {/* Logotipo en Negativo */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 min-w-[40px] min-h-[40px] bg-[#0F2D59] rounded-lg flex items-center justify-center border border-white/20">
-                <span className="text-white font-bold text-base tracking-wider font-montserrat">
-                  TM
-                </span>
-              </div>
-              <div className="flex flex-col">
-                <span className="text-[17px] font-bold text-white leading-none font-montserrat tracking-tight">
-                  TM SOLUTION
-                </span>
-                <span className="text-[9px] font-semibold text-[#94A3B8] tracking-[0.14em] uppercase mt-1 leading-none font-sans">
-                  SUMINISTROS INDUSTRIALES
-                </span>
-              </div>
+            {/* Logotipo Oficial en Negativo */}
+            <div className="pb-1">
+              <Image
+                src="/logo-tm.png"
+                alt="TM SOLUTION - Suministros Industriales"
+                width={200}
+                height={52}
+                className="h-10 w-auto object-contain brightness-0 invert"
+              />
             </div>
 
             {/* Extracto de Alcance */}
@@ -66,7 +61,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a href="#mision-vision" className="text-[#94A3B8] hover:text-white transition-colors duration-200">
-                  Misión, Visión y Valores
+                  Misión y Visión
                 </a>
               </li>
               <li>
@@ -77,10 +72,10 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Columna 3: Contacto Directo y Geolocalización */}
+          {/* Columna 3: Contacto Oficial Corporativo */}
           <div className="space-y-4">
             <h4 className="text-[15px] font-semibold text-white uppercase tracking-wider font-montserrat border-b border-[#334155] pb-2">
-              Contacto Directo
+              Contacto Oficial Corporativo
             </h4>
             <div className="space-y-3 text-[13.5px] text-[#94A3B8]">
               {/* Ubicación */}
@@ -97,8 +92,8 @@ export const Footer: React.FC = () => {
                 <svg className="w-5 h-5 text-[#25D366] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                <a href="tel:6621059595" className="text-[#E2E8F0] hover:text-white font-semibold hover:underline">
-                  6621-05-95-95
+                <a href="tel:6621124124" className="text-[#E2E8F0] hover:text-white font-semibold hover:underline">
+                  6621-12-41-24
                 </a>
               </div>
 
@@ -112,14 +107,13 @@ export const Footer: React.FC = () => {
                 </a>
               </div>
 
-              {/* Horario */}
+              {/* Horario de Atención */}
               <div className="flex items-start gap-2.5 pt-1">
                 <svg className="w-5 h-5 text-[#94A3B8] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-[12.5px] leading-snug">
-                  Lunes a Viernes: 8:00 AM – 6:00 PM <br />
-                  Sábados: 9:00 AM – 1:00 PM
+                <span className="text-[13px] leading-snug">
+                  Lunes a Viernes: 8:00 AM – 6:00 PM
                 </span>
               </div>
             </div>

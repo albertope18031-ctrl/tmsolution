@@ -6,7 +6,7 @@ export const WhatsAppWidget: React.FC = () => {
   const [isTooltipDismissed, setIsTooltipDismissed] = useState(false);
 
   const whatsappUrl =
-    "https://wa.me/526621059595?text=Hola%20TM%20SOLUTION,%20requiero%20una%20cotizaci%C3%B3n%20para%20mi%20empresa.";
+    "https://wa.me/526621124124?text=Hola%20TM%20SOLUTION,%20requiero%20una%20cotizaci%C3%B3n%20para%20mi%20empresa.";
 
   return (
     <aside
@@ -39,7 +39,7 @@ export const WhatsAppWidget: React.FC = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 min-w-[56px] min-h-[56px] rounded-full bg-[#25D366] hover:bg-[#1ebc59] active:bg-[#189947] text-white flex items-center justify-center shadow-[0_6px_16px_rgba(37,211,102,0.35)] hover:shadow-[0_8px_24px_rgba(37,211,102,0.5)] transform hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/40"
-        aria-label="Chatear por WhatsApp con TM SOLUTION al 6621-05-95-95"
+        aria-label="Chatear por WhatsApp con TM SOLUTION al 6621-12-41-24"
       >
         {/* Icono Vectorial de WhatsApp en Blanco Puro */}
         <svg
