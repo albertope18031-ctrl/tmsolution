@@ -8,10 +8,10 @@ export const BrandsHeader: React.FC = () => {
         ECOSISTEMA DE PROVEEDORES
       </span>
 
-      {/* Titular H3 Semántico */}
-      <h3 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#1F242E] font-montserrat leading-tight tracking-tight mb-3">
+      {/* Titular H2 Semántico */}
+      <h2 className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-[#1F242E] font-montserrat leading-tight tracking-tight mb-3">
         Marcas Líderes que Respaldan Nuestras Soluciones
-      </h3>
+      </h2>
 
       {/* Subtexto Descriptivo */}
       <p className="text-[14px] sm:text-[15px] text-[#5A6578] font-normal leading-relaxed">

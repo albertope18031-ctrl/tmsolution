@@ -57,11 +57,16 @@ const config: Config = {
           "0%": { opacity: "0", transform: "translateX(-35px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
+        marqueeScroll: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "fade-in-down": "fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "fade-in-down-slow": "fadeInDownSlow 2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         "fade-in-right-slow": "fadeInLeftToRight 2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "marquee-scroll": "marqueeScroll 35s linear infinite",
       },
     },
   },
