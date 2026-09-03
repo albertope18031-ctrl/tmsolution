@@ -169,3 +169,20 @@ body {
 .animate-backdrop-in {
   animation: backdropFadeIn 0.25s ease-out forwards;
 }
+
+/* Animación Fade In Up para Tarjetas de Misión y Visión */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 1s ease-out both;
+  will-change: opacity, transform;
+}

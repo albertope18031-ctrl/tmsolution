@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
 
               {/* Bajada Descriptiva / Copywriting Técnico */}
               <p className="text-[15px] sm:text-base text-[#5A6578] font-normal leading-relaxed mb-8 max-w-2xl">
-                Optimizamos la cadena de suministro de tu negocio con herramienta técnica, seguridad industrial certificada (EPP), papelería corporativa y abastecimiento integral a la medida.
+                Suministro confiable de componentes de automatización, control, potencia eléctrica y rodamientos industriales con entrega rápida.
               </p>
             </div>
 
