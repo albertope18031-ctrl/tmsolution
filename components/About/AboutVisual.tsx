@@ -7,7 +7,7 @@ export const AboutVisual: React.FC = () => {
       {/* Contenedor Principal de la Imagen con Sombra y Esquinas Redondeadas de 16px */}
       <div className="relative w-full h-[380px] md:h-[430px] rounded-2xl overflow-hidden shadow-lg sm:shadow-[0_16px_36px_rgba(15,45,89,0.08)] border border-[#E2E8F0] bg-[#0A1F3D]">
         <Image
-          src="/nosotros.png"
+          src="/nosotros1.png"
           alt="Operaciones y Almacén de Suministro TM SOLUTION"
           fill
           loading="lazy"
