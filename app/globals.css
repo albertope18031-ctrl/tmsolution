@@ -170,22 +170,11 @@ body {
   animation: backdropFadeIn 0.25s ease-out forwards;
 }
 
-/* Animación Fade In Up Ultra Ágil para Tarjetas de Misión y Visión */
-@keyframes fadeInUpMobile {
+/* Animación Fade In Up Nítida y Perceptible para Tarjetas de Misión y Visión */
+@keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(12px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInUpDesktop {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
   }
   100% {
     opacity: 1;
@@ -194,12 +183,6 @@ body {
 }
 
 .animate-fade-in-up {
-  animation: fadeInUpMobile 0.4s ease-out both;
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   will-change: opacity, transform;
-}
-
-@media (min-width: 768px) {
-  .animate-fade-in-up {
-    animation: fadeInUpDesktop 0.9s ease-out both;
-  }
 }
