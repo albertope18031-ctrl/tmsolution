@@ -14,6 +14,8 @@ export const MissionVisionCards: React.FC = () => {
     const el = missionRef.current;
     if (!el) return;
 
+    const isMobile = window.innerWidth < 768;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -22,8 +24,8 @@ export const MissionVisionCards: React.FC = () => {
         }
       },
       {
-        threshold: 0.2,
-        rootMargin: "0px 0px -20px 0px",
+        threshold: isMobile ? 0 : 0.15,
+        rootMargin: isMobile ? "0px 0px 100px 0px" : "0px 0px -20px 0px",
       }
     );
 
@@ -36,6 +38,8 @@ export const MissionVisionCards: React.FC = () => {
     const el = visionRef.current;
     if (!el) return;
 
+    const isMobile = window.innerWidth < 768;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -44,8 +48,8 @@ export const MissionVisionCards: React.FC = () => {
         }
       },
       {
-        threshold: 0.2,
-        rootMargin: "0px 0px -20px 0px",
+        threshold: isMobile ? 0 : 0.15,
+        rootMargin: isMobile ? "0px 0px 100px 0px" : "0px 0px -20px 0px",
       }
     );
 
@@ -55,13 +59,13 @@ export const MissionVisionCards: React.FC = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
-      {/* Tarjeta 1: Nuestra Misión (Entrada independiente Fade In Up) */}
+      {/* Tarjeta 1: Nuestra Misión (Entrada anticipada e inmediata en móvil) */}
       <div
         ref={missionRef}
         className={`bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 lg:p-9 flex flex-col justify-start transition-shadow duration-300 hover:border-[#0F2D59]/30 hover:shadow-[0_12px_24px_rgba(15,45,89,0.06)] shadow-sm ${
           isMissionInView
             ? "animate-fade-in-up"
-            : "opacity-0 translate-y-[35px]"
+            : "opacity-0 translate-y-[12px] md:translate-y-[30px]"
         }`}
       >
         {/* Cabecera de Tarjeta con Icono 48x48px */}
@@ -95,13 +99,13 @@ export const MissionVisionCards: React.FC = () => {
         </p>
       </div>
 
-      {/* Tarjeta 2: Nuestra Visión (Entrada independiente Fade In Up con retardo armónico en Desktop) */}
+      {/* Tarjeta 2: Nuestra Visión (Entrada anticipada e inmediata en móvil) */}
       <div
         ref={visionRef}
         className={`bg-white border border-[#E2E8F0] rounded-2xl p-6 sm:p-8 lg:p-9 flex flex-col justify-start transition-shadow duration-300 hover:border-[#0F2D59]/30 hover:shadow-[0_12px_24px_rgba(15,45,89,0.06)] shadow-sm ${
           isVisionInView
             ? "animate-fade-in-up md:[animation-delay:200ms]"
-            : "opacity-0 translate-y-[35px]"
+            : "opacity-0 translate-y-[12px] md:translate-y-[30px]"
         }`}
       >
         {/* Cabecera de Tarjeta con Icono 48x48px */}

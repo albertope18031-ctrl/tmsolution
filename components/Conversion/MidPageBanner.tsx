@@ -7,7 +7,7 @@ export const MidPageBanner: React.FC = () => {
   const { openModal } = useQuoteModal();
 
   return (
-    <section className="relative w-full bg-[#0F2D59] py-14 sm:py-18 lg:py-20 overflow-hidden text-white border-y border-[#0A1F3D]">
+    <section className="relative w-full bg-[#0F2D59] pt-12 pb-8 sm:py-18 lg:py-20 overflow-hidden text-white border-y border-[#0A1F3D]">
       {/* Textura Gráfica de Malla Técnica en Bajísima Opacidad */}
       <div className="absolute inset-0 pointer-events-none opacity-5">
         <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
