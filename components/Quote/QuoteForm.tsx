@@ -167,7 +167,6 @@ export const QuoteForm: React.FC = () => {
             required
             value={formData.fullName}
             onChange={handleChange}
-            placeholder="Ej. Ing. Carlos Mendoza"
             className="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-[#1F242E] placeholder-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F2D59] focus:border-transparent transition-all"
           />
         </div>
@@ -187,7 +186,6 @@ export const QuoteForm: React.FC = () => {
               maxLength={10}
               value={formData.phone}
               onChange={handleChange}
-              placeholder="Ej. 6621124124"
               className="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-[#1F242E] placeholder-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F2D59] focus:border-transparent transition-all"
             />
           </div>
@@ -203,7 +201,6 @@ export const QuoteForm: React.FC = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              placeholder="carlos.mendoza@empresa.com"
               className="w-full px-3.5 py-2.5 rounded-lg border border-[#E2E8F0] text-sm text-[#1F242E] placeholder-[#94A3B8] focus:outline-none focus:ring-2 focus:ring-[#0F2D59] focus:border-transparent transition-all"
             />
           </div>
