@@ -23,20 +23,23 @@ export const Hero: React.FC = () => {
             {/* Nivel 1: Badge de Confianza */}
             <HeroBadge />
 
-            {/* Nivel 2: Titular Principal H1 Semántico con Animación Fade In Down */}
-            <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px] font-extrabold font-montserrat text-[#0F2D59] leading-[1.16] tracking-tight mb-4 animate-fade-in-down">
-              SUMINISTROS Y SOLUCIONES DE CALIDAD PARA TU EMPRESA
-            </h1>
+            {/* Contenedor Unificado de Textos con Animación Fade In Down Lenta y Pausada (2s) */}
+            <div className="w-full animate-fade-in-down-slow">
+              {/* Nivel 2: Titular Principal H1 Semántico */}
+              <h1 className="text-3xl sm:text-4xl lg:text-[44px] xl:text-[50px] font-extrabold font-montserrat text-[#0F2D59] leading-[1.16] tracking-tight mb-4">
+                SUMINISTROS Y SOLUCIONES DE CALIDAD PARA TU EMPRESA
+              </h1>
 
-            {/* Nivel 3: Lema Comercial de Impacto (H2) */}
-            <h2 className="text-lg sm:text-xl font-bold text-[#1F242E] leading-snug mb-3">
-              ¿Lo quieres o lo necesitas? Nosotros te lo conseguimos.
-            </h2>
+              {/* Nivel 3: Lema Comercial de Impacto (H2) */}
+              <h2 className="text-lg sm:text-xl font-bold text-[#1F242E] leading-snug mb-3">
+                ¿Lo quieres o lo necesitas? Nosotros te lo conseguimos.
+              </h2>
 
-            {/* Bajada Descriptiva / Copywriting Técnico */}
-            <p className="text-[15px] sm:text-base text-[#5A6578] font-normal leading-relaxed mb-8 max-w-2xl">
-              Optimizamos la cadena de suministro de tu negocio con herramienta técnica, seguridad industrial certificada (EPP), papelería corporativa y abastecimiento integral a la medida.
-            </p>
+              {/* Bajada Descriptiva / Copywriting Técnico */}
+              <p className="text-[15px] sm:text-base text-[#5A6578] font-normal leading-relaxed mb-8 max-w-2xl">
+                Optimizamos la cadena de suministro de tu negocio con herramienta técnica, seguridad industrial certificada (EPP), papelería corporativa y abastecimiento integral a la medida.
+              </p>
+            </div>
 
             {/* Nivel 4: Botones de Acción (CTAs) */}
             <HeroCTA />

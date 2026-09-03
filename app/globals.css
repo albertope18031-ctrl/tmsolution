@@ -77,3 +77,20 @@ body {
   animation: fadeInDown 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   will-change: opacity, transform;
 }
+
+/* Animación de entrada pausada y cinematográfica Fade In Down (2s) para el bloque completo de textos Hero */
+@keyframes fadeInDownSlow {
+  0% {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-down-slow {
+  animation: fadeInDownSlow 2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform;
+}
