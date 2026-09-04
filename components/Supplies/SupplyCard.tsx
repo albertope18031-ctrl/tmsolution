@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import { SupplyCategory } from "@/types/supplies";
+import { useQuoteModal } from "@/context/QuoteModalContext";
 
 interface SupplyCardProps {
   category: SupplyCategory;
@@ -8,11 +11,12 @@ interface SupplyCardProps {
 
 export const SupplyCard: React.FC<SupplyCardProps> = ({ category, isDragging = false }) => {
   const IconComponent = category.icon;
+  const { openModal } = useQuoteModal();
 
   const handleClick = (e: React.MouseEvent) => {
-    if (isDragging) {
-      e.preventDefault();
-      e.stopPropagation();
+    e.preventDefault();
+    if (!isDragging) {
+      openModal();
     }
   };
 
@@ -49,18 +53,18 @@ export const SupplyCard: React.FC<SupplyCardProps> = ({ category, isDragging = f
         </ul>
       </div>
 
-      {/* Bloque Inferior: Enlace de Acción Interactivo con Micro-desplazamiento */}
+      {/* Bloque Inferior: Botón de Acción Interactivo que abre el Pop-up */}
       <div className="pt-4 border-t border-[#F0F2F5] mt-auto">
-        <a
-          href={category.actionHref}
+        <button
+          type="button"
           onClick={handleClick}
-          className="group/link inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#0F2D59] hover:text-[#0A1F3D] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F2D59] rounded"
+          className="group/link inline-flex items-center gap-1.5 text-[14px] font-semibold text-[#0F2D59] hover:text-[#0A1F3D] transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0F2D59] rounded text-left"
         >
           <span>{category.actionLabel}</span>
           <span className="inline-block transform transition-transform duration-200 group-hover/link:translate-x-1">
             →
           </span>
-        </a>
+        </button>
       </div>
     </div>
   );

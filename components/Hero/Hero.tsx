@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
 
               {/* Bajada Descriptiva / Copywriting Técnico */}
               <p className="text-[15px] sm:text-base text-[#5A6578] font-normal leading-relaxed mb-8 max-w-2xl">
-                Suministro confiable de componentes de automatización, control, potencia eléctrica y rodamientos industriales con entrega rápida.
+                Suministro ágil y confiable de componentes de automatización, control, potencia y rodamientos, complementado con seguridad industrial certificada (EPP), insumos operativos y adquisiciones a la medida para piezas críticas o difíciles de conseguir.
               </p>
             </div>
 

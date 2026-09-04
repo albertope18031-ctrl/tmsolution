@@ -24,7 +24,7 @@ export const Footer: React.FC = () => {
 
             {/* Extracto de Alcance */}
             <p className="text-[14px] text-[#94A3B8] leading-relaxed pt-1">
-              Especialistas en suministro integral para la industria, minería y construcción. Más de 9 años abasteciendo a empresas en México con calidad, prontitud y precios justos.
+              Especialistas en suministro integral para la industria, minería, construcción e insumos corporativos. Más de 9 años abasteciendo a empresas en México con calidad, prontitud y precios justos.
             </p>
 
             {/* Lema de Marca */}
